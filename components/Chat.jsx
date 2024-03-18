@@ -1,13 +1,19 @@
 "use client";
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { generateChatResponse } from "../utils/action";
 
 const Chat = () => {
   const [text, setText] = useState("");
   const [message, setMessage] = useState([]);
 
+  const { mutate: createMessage } = useMutation({
+    mutationFn: (message) => generateChatResponse(message),
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(text);
+    createMessage(text);
   };
 
   return (
@@ -25,7 +31,9 @@ const Chat = () => {
             required
             onChange={(e) => setText(e.target.value)}
           />
-          <button className="btn btn-primary join-item" type="submit">ask question</button>
+          <button className="btn btn-primary join-item" type="submit">
+            ask question
+          </button>
         </div>
       </form>
     </div>
