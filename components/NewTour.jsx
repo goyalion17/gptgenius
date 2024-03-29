@@ -1,8 +1,10 @@
 "use client";
 import { useMutation } from "@tanstack/react-query";
-import TourInfo from "./TourInfo";
-import { generateTourResponse } from "../utils/action";
 import toast from "react-hot-toast";
+
+import TourInfo from "./TourInfo";
+
+import { generateTourResponse } from "../utils/action";
 
 const NewTour = () => {
   const {
