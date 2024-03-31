@@ -1,4 +1,4 @@
-import Sidebar from "@/components/Sidebar";
+import SideBar from "@/components/SideBar";
 import { FaBarsStaggered } from "react-icons/fa6";
 
 const layout = ({ children }) => {
@@ -20,7 +20,7 @@ const layout = ({ children }) => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <Sidebar />
+        <SideBar />
       </div>
     </div>
   );
